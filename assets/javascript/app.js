@@ -16,6 +16,7 @@ function populateButtons(searchArr,classToAdd,areaToAddTo){
 };
 //link API
 $(document).on('click','.searchButton',function(){
+   $('#searches').empty();
     var type = $(this).data('type');
     var queryURL = 'http://api.giphy.com/v1/gifs/search?q=' + type + '&api_key=0sBEmny9kqsKfpaOTCV622tPjDLXzzGi&limit=10'
     $.ajax({url:queryURL,method:'GET'})
@@ -29,15 +30,15 @@ $(document).on('click','.searchButton',function(){
                 var still = response.data[i].images.fixed_height_still.url;
                 var image = $('<img>');
                 image.attr('src',still);
-                image.attr('data-still', still);
+                image.attr('data-still',still);
                 image.attr('data-animated',animated);
                 image.attr('data-state','still');
                 image.addClass('searchImage');
-                searchDiv.append(p);
                 searchDiv.append(image);
+                searchDiv.append(p);
                 $('#searches').append(searchDiv);
-            };
-        });
+            }
+        })
 });
 //click to play/pause
 $(document).on('click','.searchImage',function(){
@@ -52,7 +53,8 @@ $(document).on('click','.searchImage',function(){
 });
 //create button with user input
 $('#addSearch').on('click',function(){
-    var newSearch = $('input').eq(0).val();
+    event.preventDefault();
+    var newSearch = $('input').eq(0).val().trim();
     searchArr.push(newSearch);
     populateButtons(searchArr,'searchButton','#buttonsArea');
     return false;
