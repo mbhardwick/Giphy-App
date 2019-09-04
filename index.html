@@ -7,18 +7,16 @@
     <title>Giphy App</title>
     <!-- JQuery Link-->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <!-- app.js Link -->
-    <script src="assets/app.js"></script>
 </head>
 <body>
-    <div id="wrapper">
-        <div id="subwrapper">
-            <div id="search">
-                <h1>Add a TV Show</h1>
-                <input id="input" type="text" placeholder="Search..">
-                <button id="button" type="submit">Submit</button>
-            </div>
-        </div>
-    </div>
+    <div id="buttonsArea"></div>
+    <form id="search-form">
+        <label for="search-input">Add a TV Show!</label>
+        <input id="search-input" type="text" placeholder="Search.."><br>
+        <input id="addSearch" type="submit" value="Submit">
+    </form>
+    <div id="searches"></div>
+<!-- app.js Link -->
+<script src="assets/javascript/app.js" type="text/javascript"></script>
 </body>
 </html>
