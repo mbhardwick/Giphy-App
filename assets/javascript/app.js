@@ -49,7 +49,7 @@ $(document).on('click','.searchImage',function(){
     } else {
         $(this).attr('src',$(this).data('still'));
         $(this).attr('data-state','still');
-    };
+    }
 });
 //create button with user input
 $('#addSearch').on('click',function(){
