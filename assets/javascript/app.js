@@ -18,7 +18,7 @@ function populateButtons(searchArr,classToAdd,areaToAddTo){
 $(document).on('click','.searchButton',function(){
    $('#searches').empty();
     var type = $(this).data('type');
-    var queryURL = 'http://api.giphy.com/v1/gifs/search?q=' + type + '&api_key=0sBEmny9kqsKfpaOTCV622tPjDLXzzGi&limit=10'
+    var queryURL = 'https://api.giphy.com/v1/gifs/search?q=' + type + '&api_key=0sBEmny9kqsKfpaOTCV622tPjDLXzzGi&limit=10'
     $.ajax({url:queryURL,method:'GET'})
         //set images and ratings to appear
         .done(function(response){
